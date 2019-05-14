@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>文字跳跃特效</title>
+    <style>
+        @import url(htpps://fonts.googleapis.com/css?family=Lobster);
+        html,body{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(#353b48,#8C7AE6);
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            align-content: center;
+;
+        }
+        h1{
+            cursor: default;
+        }
+        span{
+            font-size: 100px;
+            font-family: "Lobster",serif;
+            color: #fff;
+            position: relative;
+            text-shadow: 0 2px 0 #ccc,0 3px 0 #ccc,0 4px 0 #ccc,0 5px 0 #ccc,0 10px 10px rgba(0,0,0,.4);
+            top: 20px;
+            animation: jump 0.3s ease infinite alternate;
+            -webkit-animation: jump 0.3s ease infinite alternate;
+        }
+/* 注释：
+        Internet Explorer 10、Firefox 以及 Opera 支持 animation 属性。
+        Safari 和 Chrome 支持替代的 -webkit-animation 属性。
+        注释：Internet Explorer 9 以及更早的版本不支持 animation 属性。
+
+        animation: jump    0.3s       ease                infinite       alternate;
+        animation: name duration timing-function delay iteration-count direction;        
+            animation-name	规定需要绑定到选择器的 keyframe 名称。。
+            animation-duration	规定完成动画所花费的时间，以秒或毫秒计。
+            animation-timing-function	规定动画的速度曲线。
+                animation-timing-function 使用名为三次贝塞尔（Cubic Bezier）函数的数学函数，来生成速度曲线。您能够在该函数中使用自己的值，也可以预定义的值：
+                linear	动画从头到尾的速度是相同的。	
+                ease	默认。动画以低速开始，然后加快，在结束前变慢。	
+                ease-in	动画以低速开始。	
+                ease-out	动画以低速结束。	
+                ease-in-out	动画以低速开始和结束。	
+                cubic-bezier(n,n,n,n)	在 cubic-bezier 函数中自己的值。可能的值是从 0 到 1 的数值。
+            animation-delay	规定在动画开始之前的延迟。
+            animation-iteration-count	规定动画应该播放的次数。
+                    animation-iteration-count: n|infinite;
+                    n	        定义动画播放次数的数值。	
+                    infinite	规定动画应该无限次播放。
+            animation-direction	规定是否应该轮流反向播放动画。
+                    normal	默认值。动画应该正常播放。	测试
+                    alternate	动画应该轮流反向播放。
+ */
+        span:nth-child(1){animation-delay: 0.1s;}
+        span:nth-child(2){animation-delay: 0.2s;}
+        span:nth-child(3){animation-delay: 0.3s;}
+        span:nth-child(4){animation-delay: 0.4s;}
+        span:nth-child(5){animation-delay: 0.5s;}
+        span:nth-child(6){animation-delay: 0.6s;}
+        @keyframes jump{
+            100%{
+                top:-20px;
+                text-shadow: 0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 10px 10px rgba(0,0,0,.4);
+            }
+        }
+        @-webkit-keyframes jump{
+            100%{
+                top:-20px;
+                text-shadow: 0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 10px 10px rgba(0,0,0,.4);
+            }
+        }
+        @-moz-keyframes jump{
+            100%{
+                top:-20px;
+                text-shadow: 0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 10px 10px rgba(0,0,0,.4);
+            }
+        }
+        @-o-keyframes jump{
+            100%{
+                top:-20px;
+                text-shadow: 0 6px 0 #ccc,0 7px 0 #ccc,0 8px 0 #ccc,0 9px 0 #ccc,0 10px 10px rgba(0,0,0,.4);
+            }
+        }
+
+
+        /* 
+        
+        @keyframes animationname {keyframes-selector {css-styles;}}
+        animationname	必需。定义动画的名称。
+        keyframes-selector	 必需。动画时长的百分比。
+                            合法的值：
+                            0-100%
+                            from（与 0% 相同）
+                            to（与 100% 相同）
+        css-styles	必需。一个或多个合法的 CSS 样式属性。
+
+        以百分比来规定改变发生的时间，或者通过关键词 "from" 和 "to"，等价于 0% 和 100%。
+        0% 是动画的开始时间，100% 动画的结束时间。
+        为了获得最佳的浏览器支持，您应该始终定义 0% 和 100% 选择器。
+        注释：请使用动画属性来控制动画的外观，同时将动画与选择器绑定
+
+        目前浏览器都不支持 @keyframes 规则。
+        Firefox 支持替代的 @-moz-keyframes 规则。
+        Opera 支持替代的 @-o-keyframes 规则。
+        Safari 和 Chrome 支持替代的 @-webkit-keyframes 规则。
+        
+         */
+    </style>
+</head>
+<body>
+    <h1>
+            <span>"</span>
+            <span>H</span>
+            <span>T</span>
+            <span>M</span>
+            <span>L</span>
+            <span>"</span>
+    </h1>
+</body>
+</html>
